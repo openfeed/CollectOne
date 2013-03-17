@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.openfeed.collectone.model.impl.AccountModelImpl">
+		<attributes>
+			<id name="account_id" />
+			<basic name="company_Id" />
+			<basic name="name" />
+			<basic name="first_name" />
+			<basic name="last_name" />
+			<basic name="date">
+				<column name="DATE_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="active">
+				<column name="ACTIVE_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.openfeed.collectone.model.impl.CompanyModelImpl">
+		<attributes>
+			<id name="company_id" />
+			<basic name="name" />
+			<basic name="date">
+				<column name="DATE_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.openfeed.collectone.model.impl.AccountImpl" name="Account">
+		<table name="collectone_Account" />
+		<attributes />
+	</entity>
+	<entity class="com.openfeed.collectone.model.impl.CompanyImpl" name="Company">
+		<table name="collectone_Company" />
+		<attributes />
+	</entity>
+</entity-mappings>

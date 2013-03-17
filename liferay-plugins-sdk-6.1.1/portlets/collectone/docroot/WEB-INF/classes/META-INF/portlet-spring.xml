@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.openfeed.collectone.service.AccountLocalService" class="com.openfeed.collectone.service.impl.AccountLocalServiceImpl" />
+	<bean id="com.openfeed.collectone.service.persistence.AccountPersistence" class="com.openfeed.collectone.service.persistence.AccountPersistenceImpl" parent="basePersistence" />
+	<bean id="com.openfeed.collectone.service.CompanyLocalService" class="com.openfeed.collectone.service.impl.CompanyLocalServiceImpl" />
+	<bean id="com.openfeed.collectone.service.persistence.CompanyPersistence" class="com.openfeed.collectone.service.persistence.CompanyPersistenceImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,1 @@
+create index IX_21E68E81 on collectone_Account (company_Id);

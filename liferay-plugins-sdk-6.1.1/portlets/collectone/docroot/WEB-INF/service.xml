@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.openfeed.collectone">
+	<author>sy</author>
+	<namespace>collectone</namespace>
+    <entity name="Account" remote-service="false" local-service="true" table="collectone_Account" cache-enabled="false" json-enabled="false">
+        <column name="account_id" type="int" primary="true" id-type="increment"></column>
+        <column name="company_Id" type="int"></column>
+        <column name="name" type="String"></column>
+        <column name="first_name" type="String"></column>
+        <column name="last_name" type="String"></column>
+        <column name="date" type="Date"></column>
+        <column name="active" type="boolean"></column>
+        <finder name="CompanyId" return-type="Collection" unique="false">
+            <finder-column name="company_Id"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Company" local-service="true" remote-service="false" table="collectone_Company">
+        <column name="company_id" type="int" primary="true" id-type="increment"></column>
+        <column name="name" type="String"></column>
+        <column name="date" type="Date"></column>
+        <column name="Accounts" type="Collection" entity="Account" mapping-key="company_id"></column>
+    </entity>
+</service-builder>
